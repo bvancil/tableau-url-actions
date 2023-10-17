@@ -1,0 +1,333 @@
+---
+title: "Tableau URL actions"
+subtitle: "Tightening feedback loops and deep linking"
+date: "2023-10-17"
+date-format: iso
+author: "Brian Vancil"
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: images/AIRE_80.png
+    theme: kubrand.scss
+resources:
+  - demo.pdf
+---
+
+## learning goals
+
+1.  the difference between automating and informating
+2.  *how* to create a URL action in Tableau
+3.  *when* to create a URL action in Tableau by looking at 3 case studies
+    a.  🔁 Pre-populating fields on a dashboard feedback form with [Google Forms]{.underline}
+    b.  🌡️ Identifying bad data using data quality dashboards with [Qualtrics]{.underline}
+    c.  🔍 Linking back to a source system with [Slate]{.underline}
+
+::: notes
+Assuming you already know the basics of Tableau, you will learn...
+
+Not everything will be pertinent to everyone, but I will move quickly through those details, leave you enough information to reconstruct them on your own, and focus on creating a discussion of ways to improve the user experience.
+:::
+
+## philosophy of helpfulness
+
+![](images/imgflip_bear.jpg){fig-alt="Bear lying down with the text, our users aren't lazy; they deserve the best user experience."}
+
+::: notes
+We are productivity multipliers for our organizations. If 10 users use your visualization per day, and you can save them 1 minute each, and it only takes you a few minutes to do, why wouldn't you do it?
+
+Users of our data products deserve to be able to do the most with the fewest resources. Let's have some audience participation. Stretch your body if you can answer "yes" to the following questions.
+
+1.  Do you have users who will describe a problem they are having with a Tableau dashboard without telling you the dashboard they are using?
+2.  Do you sometimes provide a user experience in which users can drill down into less-aggregated data?
+3.  If a user wants to find out more information about the records they find, do they have to open the source system and type in some arcane code to find the detailed records? (Why would you do that to people?)
+4.  Do you know what kinds of URL schemes your source systems (like student information systems or customer relation managers) support? (If you are like most working in analytics or institutional research, the answer is probably not. You might be lucky if you even have access to the source systems.)
+
+Resources: [imgflip generator](https://imgflip.com/i/82rw5v)
+:::
+
+## *inform*ating
+
+::: callout-note
+[*Informating*](https://en.wikipedia.org/wiki/Informating) is a term coined by Shoshana Zuboff in the book *In the Age of the Smart Machine* (1988). You can think of it as turning something into useable information.
+:::
+
+::: {style="font-size: 60%;"}
+### examples
+
+1.  Instead of displaying an employee's ID, create a structured link to their detail page in your human resources system.
+2.  Instead of displaying weird records in a data quality dashboard, link back to where users can fix them.
+3.  If a student has taken a particular course, link to a dashboard where you can see how others have fared.
+:::
+
+::: notes
+In studies of the productivity gains from informating v. automating, the idea is that informating wins.
+
+In your own job, when something is taking too long, you can often automate that process. When you can automate the access to information for others, then you are *informating*. Information has a meaning, and by creating links, you are endowing the information with a context that others can use to find out more information.
+:::
+
+## creating a URL action
+
+::: {layout-ncol="2"}
+![Click menu Dashboard \> Actions...](images/google-forms_tableau-dashboard-actions.png){fig-alt="Click on Dashboard and then Actions"}
+
+![Then click the Add Action button and select "Go to URL..."](images/tableau_add-action.png){fig-alt="Click Add Action, then 'Go to URL...'"}
+:::
+
+::: notes
+What are actions? They are interactive elements of dashboards or sheets that permit interactions between sheets. The "Go to URL..." actions, or "URL actions" as I'll call them for short, are a little different in that they allow interaction with a website outside of Tableau. Think of them as a primitive precursor to extensions.
+:::
+
+## creating a URL action
+
+1.  **Give the URL Action a good name**, since it will be the link text when you use Run action on Menu.
+2.  **The URL is the most important part.** Start simple and build complexity iteratively!
+
+![](images/tableau_add-url-action.png){fig-alt="Add URL Action dialog"}
+
+::: notes
+The rest of the presentation will be about what you can do with the URL.
+:::
+
+# case study 🔁: feedback via Google Forms
+
+## 🔁results
+
+::: {layout="[[20, 80]]"}
+[test dashboard](https://public.tableau.com/app/profile/brian.vancil/viz/WorldIndicators-FeedbackTest/A) {{< qrcode https://public.tableau.com/app/profile/brian.vancil/viz/WorldIndicators-FeedbackTest/A qrft >}}
+
+![](images/google-forms_dashboard.png){fig-alt="Dashboard with a link to 'Give feedback'"}
+:::
+
+::: notes
+We have created a very simple dashboard based on the World Indicators sample workbook.
+:::
+
+## 🔁 functionality
+
+![](images/google-forms_dashboard-feedback.png){fig-alt="Tableau pop-up window showing URL action"}
+
+![](images/google-forms_feedback-form.png){fig-alt="Pre-filled information on feedback form"}
+
+::: notes
+:::
+
+## 🔁 how it works in Google Forms
+
+[![Click on "⁝" \> "Get pre-filled link"](images/google-forms_prefilled.png)](https://docs.google.com/forms/d/1o1hA2CA0khPzK5q67INkGGceSzFtRzJPIwq3m56C_Ds/edit)
+
+## 🔁 how it works in Google Forms
+
+When you click "Get link" and then "COPY LINK", you'll get something like (where I have added spaces and line breaks for readability):
+
+`https://docs.google.com/forms/d/e/1FAIpQLSdm28hTNGWKTXT` `5vk1Wmk3c_BuDvsmnShylr6FLGGx0vaQdyw/viewform` `?usp=pp_url` `&entry.1727620612=`[**First+Name**]{style="color: red;"} `&entry.838417280=`[**Last+Name**]{style="color: red;"} `&entry.908520332=`[**__other_option__**]{style="color: red;"} `&entry.908520332.other_option_response=`[**other+dashboard**]{style="color: red;"}
+
+::: notes
+I've highlightede in red the parts of the URL that changed based on what I entered. The magic of this is that we can have Tableau construct the URL dynamically.
+
+I would just stick to free text fields rather than trying to use lists so that you don't have to continually change the elements in the list.
+:::
+
+## 🔁 GET URLs
+
+::: {style="font-size: 60%;"}
+| meaning               | URL part                                    |
+|-----------------------|---------------------------------------------|
+| protocol              | `https://`                                  |
+| server name           | `docs.google.com`                           |
+| path                  | `/forms/d/e/.../viewform`                   |
+| start of GET query    | `?`                                         |
+| key=URL-encoded value | `usp=pp_url`                                |
+| separator             | `&`                                         |
+| key=URL-encoded value | `entry.908520332=Retention+%26+progression` |
+| separator             | `&`                                         |
+| key=URL-encoded value | `entry.1727620612=<Username>`               |
+| separator             | `&`                                         |
+| key=URL-encoded value | `entry.838417280=<Full name>`               |
+
+URL broken up into multiple pieces. These should all be on one line.
+
+References: [permadi.com introduction to URL encoding](https://www.permadi.com/tutorial/urlEncoding/)
+:::
+
+## 🔁 how it works in Tableau
+
+![](images/google-forms_tableau-dashboard-actions-list.png){fig-alt="List of two dashboard actions, Give feedback on dashboard A and Give feedback on dashboard B. Both are Menu actions that use Username and Full name."}
+
+::: notes
+:::
+
+## 🔁 what to prepopulate
+
+![](images/google-forms_tableau-calc_username.png){fig-alt="The calculation Username is just the string My Tableau Server User Name in upper camel case"}
+
+![](images/google-forms_tableau-calc_fullname.png){fig-alt="The calculation Full name is just the string My Full Name"}
+
+::: notes
+Tableau Public restricts us from exfiltrating user information using the `USERNAME()` or `FULLNAME()` functions, but of course, you are free to do this on your own Tableau Server instance. This saves users having to enter their information each time they fill out the form.
+
+You'll also want to pre-populate the dashboard name. You can create variables or parameters to do this, but I would just do that directly on the URL as you specify the URL action.
+:::
+
+## 🔁 create a feedback sheet
+
+![](images/google-forms_tableau_feedback-sheet.png){fig-alt="Create a sheet with Username and Full name on details. You can also create a tooltip Privacy Notice"} ![](images/google-forms_tableau_feedback-sheet-tooltip.png){fig-alt="Privacy Notice tooltip stating that we will pass the following values to Google Forms"}
+
+## 🔁 edit the action
+
+![](images/google-forms_tableau_edit-url-action.png){fig-alt="Edit URL action to add a menu action using a given URL."}
+
+::: notes
+I made the give feedback sheet its own sheet.
+
+The insert menu is used to enter the user information fields, which you should put on detail on each sheet in which you want to use them.
+:::
+
+# case study: 🌡️ Data quality via Qualtrics
+
+## 🌡️ results
+
+::: {layout="[[20, 80]]"}
+[test dashboard](https://public.tableau.com/app/profile/brian.vancil/viz/data-quality-test/Dashboard) {{< qrcode https://public.tableau.com/app/profile/brian.vancil/viz/data-quality-test/Dashboard qrdq >}}
+
+![](images/qualtrics_dashboard-feedback.png){fig-alt="Dashboard with a link to 'Give feedback about this data point'"}
+:::
+
+::: notes
+We have created a very simple dashboard with a few weird values.
+:::
+
+## 🌡️ functionality
+
+![](images/qualtrics_prefilled.png){fig-alt="Pre-filled form"}
+
+::: notes
+Note that I have only pre-filled the ID so that I'm not passing around too much FERPA-covered information.
+:::
+
+## 🌡️ add parameters to a survey
+
+References: Qualtrics. "[Passing information via query strings](https://www.qualtrics.com/support/survey-platform/survey-module/survey-flow/standard-elements/passing-information-through-query-strings/)".
+
+![Click on the "Survey flow" button.](images/qualtrics_flow.png){fig-alt="Click on the Survey flow button"}
+
+::: notes
+Qualtrics is much more flexible than Google Forms, so there is more complexity to set up the pre-filled URLS, but it's not too much more difficult. In fact, it's easy for you to be sneaky and hide some of those pre-filled fields in the Qualtrics form so that people don't know how much information they are revealing, but I trust in your professional ethics.
+
+:::
+
+## 🌡️  survey flow
+
+![Set Embedded Data variables from the URL](images/qualtrics_survey-flow.png){fig-alt="Survey flow that sets id, user, and name from the URL"}
+
+::: notes
+You may create your own variable names in Qualtrics, which can be different from the name of the survey element.
+
+:::
+
+## 🌡️ use embedded data variables
+
+![Use Embedded Data variable in default value with the syntax `${e://Field/`*fieldname*`}`](images/qualtrics_survey-field.png){fig-alt="Set an individual field"}
+
+::: notes
+After the survey flow has run, Qualtrics makes those variables available within the survey.
+:::
+
+## 🌡️ conclusions
+
+After this, the work in Tableau is nearly identical to the Google Forms case.
+
+![Feedback dot approach](images/qualtrics_tableau-feedback-dot.png){fig-alt="Clicking on feedback dot brings up link."}
+
+::: notes
+I used an explicit feedback dot to call attention to this functionality, but users would need to be told that they needed to click anyway, so I'm not at all set on this approach. An i-button may be a better approach.
+:::
+
+# case study: 🔍 deep-linking into Slate
+
+::: notes
+Users often want to drill down into data. Tableau can do some of this, but at some point, users often want the source systems, especially when they want to modify errant data.
+
+In our work, we are rarely have access to source systems, let alone design them. However, the types of URLs that these source applications support matter greatly to the user experience we are able to give users. We would like to be able to deep link (link to a specific detail page) as opposed to a shallow link to a home page.
+
+I see a large need for you to be more involved in asking the hard questions when these systems are purchased.
+:::
+
+## 🔍 warning! 
+
+🚧🏗👷‍♀️👷‍♂️🏗🚧 This section is a work-in-progress.
+
+## 🔍 add parameter to report
+
+Click "Edit Report" and then "Edit" to bring up the "Edit Report" dialog so that you can enter the parameters in the "Parameters" box. To define a parameter called `StudentID`, I used the XML markup `<param id="StudentID" />`.
+
+dialog![](images/slate_edit-report_param.png)
+
+## 🔍 add a report part
+
+Add a "Data/Charts" or "Data Explorer" part. The "Query" part didn't work for me.
+
+dialog![](images/slate_edit-data-table.png) 
+
+::: notes
+I suspect that the Query report part may be necessary to get the Slate functionality to link to a student or application detail page.
+::: 
+
+## 🔍 use parameter in a filter
+
+Use the syntax `@`*variablename* to in a filter to access the parameter.
+
+dialog![](images/slate_edit-data-table_adding-filter.png) dialog![](images/slate_edit-data-table_filled-out.png)
+
+::: notes
+a
+::: 
+
+## 🔍 all filled out
+
+![](images/slate_edit-data-table_filled-out.png)
+
+::: notes
+You wouldn't actually want to use GUID unless your reporting database exports that field, of course, and you have it available in Tableau.
+::: 
+
+## 🔍 creating URLs
+
+Slate report IDs look like:
+
+`/manage/report/render?id=`*reportUUID*`&`*parameter1Id*`=`*parameter1Value*`&`...
+
+A [UUID/GUID](https://www.uuidgenerator.net/version4) is what Slate uses internally to refer to certain data elements as well as queries and reports.
+
+## 🔍 it works...
+
+sometimes
+
+::: {.callout-important}
+**Error**: Must declare the scalar variable "@StudentID".
+:::
+
+::: notes
+It works for me in certain report parts but fails in queries.
+::: 
+
+# conclusion
+
+## caveats and tips
+
+-   Be sure that you are exporting FERPA-covered data elements to encrypted web services (i.e., those with `https://` URLs).
+-   Tableau checks that a URL scheme is valid before activating the URL action, so test with a simple case and grow iteratively more complex.
+-   If you turn on URL encoding, it encodes all parameters and variables, even a base URL, so use care!
+-   Include variables you want to use on Detail. Otherwise, you may not see the URL action.
+
+
+::: notes
+GET-style URLs are a surprisingly powerful way to pass information from one system to another, so get informating!
+:::
+
+## more information
+
+[github.com/bvancil/tableau-url-actions](https://public.tableau.com/app/profile/brian.vancil/viz/WorldIndicators-FeedbackTest/A) {{< qrcode https://public.tableau.com/app/profile/brian.vancil/viz/WorldIndicators-FeedbackTest/A qrft >}}
+

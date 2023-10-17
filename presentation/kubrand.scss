@@ -1,0 +1,20 @@
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Montserrat", "Albany AMT", "Verdana", "Arial", sans-serif !default;
+
+// colors
+$body-bg: #f2f5f8 !default;
+$body-color: #003459 !default;
+$link-color: #0051ba !default;
+$selection-bg: #ffc82d !default;
+
+// headings
+$presentation-heading-font: "Atkinson Hyperlegible", "Freight Display Pro", "Raleway", "Halyard", "Palatino Linotype", "Palatino", "Times New Roman", "Book Antiqua", FreeSerif, serif !default;
+$presentation-heading-color: #004091 !default;
+
+/*-- scss:rules --*/
+
+.reveal a {
+    line-height: 1.3em;
+}
