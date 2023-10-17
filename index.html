@@ -331,7 +331,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Tableau URL actions</h1>
-  <p class="subtitle">Tightening feedback loops and deep linking</p>
+  <p class="subtitle">Tightening feedback loops and deep linking<br><a href="https://bvancil.github.io/tableau-url-actions/" class="uri">https://bvancil.github.io/tableau-url-actions/</a></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -356,8 +356,9 @@ Brian Vancil
 </ol></li>
 </ol>
 <aside class="notes">
+<p>Before I start, I want to thank my organization, Analytics, Institutional Research, &amp; Effectiveness at the University of Kansas for the resources to explore these ideas. Anything I say or do poorly is entirely my fault.</p>
 <p>Assuming you already know the basics of Tableau, you will learn…</p>
-<p>Not everything will be pertinent to everyone, but I will move quickly through those details, leave you enough information to reconstruct them on your own, and focus on creating a discussion of ways to improve the user experience.</p>
+<p>Since URL actions are one of the oldest two types of actions, what can I say that hasn’t been said before? I think you will get the most out of this time if you treat it as practice thinking about how you want to create dashboards. Not everything will be pertinent to everyone, but I will move quickly through those details, leave you enough information to reconstruct them on your own, and focus on creating a discussion of ways to improve the user experience.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -375,7 +376,7 @@ Brian Vancil
 
 <img data-src="images/imgflip_bear.jpg" alt="Bear lying down with the text, our users aren't lazy; they deserve the best user experience." class="r-stretch"><aside class="notes">
 <p>We are productivity multipliers for our organizations. If 10 users use your visualization per day, and you can save them 1 minute each, and it only takes you a few minutes to do, why wouldn’t you do it?</p>
-<p>Users of our data products deserve to be able to do the most with the fewest resources. Let’s have some audience participation. Stretch your body if you can answer “yes” to the following questions.</p>
+<p>Users of our data products deserve to be able to do the most with the fewest resources. Let’s have some audience participation. Stretch your body or react if you can answer “yes” to the following question.</p>
 <ol type="1">
 <li>Do you have users who will describe a problem they are having with a Tableau dashboard without telling you the dashboard they are using?</li>
 <li>Do you sometimes provide a user experience in which users can drill down into less-aggregated data?</li>
@@ -419,8 +420,7 @@ Brian Vancil
 </ol>
 </section>
 <aside class="notes">
-<p>In studies of the productivity gains from informating v. automating, the idea is that informating wins.</p>
-<p>In your own job, when something is taking too long, you can often automate that process. When you can automate the access to information for others, then you are <em>informating</em>. Information has a meaning, and by creating links, you are endowing the information with a context that others can use to find out more information.</p>
+<p>In your own job, when something is taking too long, you can often automate that process. When you can automate the access to information for others, then you are <em>informating</em>. Information has a meaning, and by creating links, you are endowing the information with a context that others can use to find out more.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -493,7 +493,19 @@ Brian Vancil
 <section>
 <section id="case-study-feedback-via-google-forms" class="title-slide slide level1 center">
 <h1>case study 🔁: feedback via Google Forms</h1>
-
+<aside class="notes">
+<p>For our first case study, we look at how to speed up the feedback loop of getting feedback on a dashboard. Users may be daunted by having to fully review a dashboard before responding. What if they can shoot off a quick comment every time they think of something to improve? Let’s make it as easy as possible for them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="results" class="slide level2">
 <h2>🔁results</h2>
@@ -502,7 +514,7 @@ Brian Vancil
 <div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
 <p><a href="https://public.tableau.com/app/profile/brian.vancil/viz/WorldIndicators-FeedbackTest/A">test dashboard</a> </p><div id="qrft" class="qrcode"></div>
 <script type="text/javascript">
-var qrcode = new QRCode("qrft", {"height":128,"colorLight":"#ffffff","colorDark":"#000000","width":128,"text":"https://public.tableau.com/app/profile/brian.vancil/viz/WorldIndicators-FeedbackTest/A"});
+var qrcode = new QRCode("qrft", {"colorLight":"#ffffff","height":128,"text":"https://public.tableau.com/app/profile/brian.vancil/viz/WorldIndicators-FeedbackTest/A","width":128,"colorDark":"#000000"});
 </script>
     <p></p>
 </div>
@@ -512,7 +524,7 @@ var qrcode = new QRCode("qrft", {"height":128,"colorLight":"#ffffff","colorDark"
 </div>
 </div>
 <aside class="notes">
-<p>We have created a very simple dashboard based on the World Indicators sample workbook.</p>
+<p>We have created a very simple dashboard based on the World Indicators sample workbook. It’s not fancy, but please give it a try.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -530,7 +542,7 @@ var qrcode = new QRCode("qrft", {"height":128,"colorLight":"#ffffff","colorDark"
 <p><img data-src="images/google-forms_dashboard-feedback.png" alt="Tableau pop-up window showing URL action"></p>
 <p><img data-src="images/google-forms_feedback-form.png" alt="Pre-filled information on feedback form"></p>
 <aside class="notes">
-
+<p>You can click on the “Give feedback” links to open a Google Form to write your feedback. Everything is pre-filled except your feedback so that I know with whom to follow up. If we were running this on Tableau Server instead of Tableau Public, we could pre-fill your actual name and username.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -546,14 +558,28 @@ var qrcode = new QRCode("qrft", {"height":128,"colorLight":"#ffffff","colorDark"
 <section id="how-it-works-in-google-forms" class="slide level2">
 <h2>🔁 how it works in Google Forms</h2>
 
-<img data-src="images/google-forms_prefilled.png" class="r-stretch quarto-figure-center"><p class="caption">Click on “⁝” &gt; “Get pre-filled link”</p></section>
+<img data-src="images/google-forms_prefilled.png" class="r-stretch quarto-figure-center"><p class="caption">Click on “⁝” &gt; “Get pre-filled link”</p><aside class="notes">
+<p>To accomplish this simple pleasure, we use the “Get pre-filled link” option in Google Forms.</p>
+<p>When you do this, you can type nonsense into each field that you want pre-filled, but I recommend that you type different nonsense because, as you’ll see in a moment, you won’t be able to distinguish the variables based on their names.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="how-it-works-in-google-forms-1" class="slide level2">
 <h2>🔁 how it works in Google Forms</h2>
 <p>When you click “Get link” and then “COPY LINK”, you’ll get something like (where I have added spaces and line breaks for readability):</p>
-<p><code>https://docs.google.com/forms/d/e/1FAIpQLSdm28hTNGWKTXT</code> <code>5vk1Wmk3c_BuDvsmnShylr6FLGGx0vaQdyw/viewform</code> <code>?usp=pp_url</code> <code>&amp;entry.1727620612=</code><span style="color: red;"><strong>First+Name</strong></span> <code>&amp;entry.838417280=</code><span style="color: red;"><strong>Last+Name</strong></span> <code>&amp;entry.908520332=</code><span style="color: red;"><strong><strong>other_option</strong></strong></span> <code>&amp;entry.908520332.other_option_response=</code><span style="color: red;"><strong>other+dashboard</strong></span></p>
+<p><code>https://docs.google.com/forms/d/e/1FAIpQLSdm28hTNGWKTXT</code> <code>5vk1Wmk3c_BuDvsmnShylr6FLGGx0vaQdyw/viewform</code> <code>?usp=pp_url</code> <code>&amp;entry.1727620612=</code><span style="color: red;"><strong>First+Name</strong></span> <code>&amp;entry.838417280=</code><span style="color: red;"><strong>Last+Name</strong></span> <code>&amp;entry.908520332=</code><span style="color: red;"><strong>__other_option__</strong></span> <code>&amp;entry.908520332.other_option_response=</code><span style="color: red;"><strong>other+dashboard</strong></span></p>
 <aside class="notes">
-<p>I’ve highlightede in red the parts of the URL that changed based on what I entered. The magic of this is that we can have Tableau construct the URL dynamically.</p>
-<p>I would just stick to free text fields rather than trying to use lists so that you don’t have to continually change the elements in the list.</p>
+<p>As promised, here’s the ugly URL. I’ve highlighted in red the parts of the URL that change based on what I enter. The magic of this is that we can have Tableau construct the URL dynamically from variables in the data as well as Tableau Server variables.</p>
+<p>If I were doing this again, I would just stick to free text fields rather than trying to use lists so that you don’t have to continually change the elements in the list or do this weird “other option” option.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -626,12 +652,25 @@ var qrcode = new QRCode("qrft", {"height":128,"colorLight":"#ffffff","colorDark"
 <p>URL broken up into multiple pieces. These should all be on one line.</p>
 <p>References: <a href="https://www.permadi.com/tutorial/urlEncoding/">permadi.com introduction to URL encoding</a></p>
 </div>
+<aside class="notes">
+<p>Here I’ve broken that URL up into parts and replaced the red parts with Tableau variables I’d like to insert between angle brackets. I’ve hard coded the dashboard variable for a hypothetical Retention ampersand progression dashboard. Note that the variable values are URL-encoded, meaning that spaces are replaced with plus signs, and special characters are replaced with ASCII hexadecimal codes starting with a percent sign. You don’t have to remember all this because Tableau can handle the URL encoding for you.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="how-it-works-in-tableau" class="slide level2">
 <h2>🔁 how it works in Tableau</h2>
 
 <img data-src="images/google-forms_tableau-dashboard-actions-list.png" alt="List of two dashboard actions, Give feedback on dashboard A and Give feedback on dashboard B. Both are Menu actions that use Username and Full name." class="r-stretch"><aside class="notes">
-
+<p>Here are our dashboard actions for the sample dashboard.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -666,13 +705,26 @@ var qrcode = new QRCode("qrft", {"height":128,"colorLight":"#ffffff","colorDark"
 <section id="create-a-feedback-sheet" class="slide level2">
 <h2>🔁 create a feedback sheet</h2>
 <p><img data-src="images/google-forms_tableau_feedback-sheet.png" alt="Create a sheet with Username and Full name on details. You can also create a tooltip Privacy Notice"> <img data-src="images/google-forms_tableau_feedback-sheet-tooltip.png" alt="Privacy Notice tooltip stating that we will pass the following values to Google Forms"></p>
+<aside class="notes">
+<p>I recommend creating a separate feedback sheet so that you can style the text to look like a link and add any special tooltip you want. I added a Privacy Notice to let users know that you will be using their username and full name. Notice that the variables I want to use in the URL are pills on detail.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="edit-the-action" class="slide level2">
 <h2>🔁 edit the action</h2>
 
 <img data-src="images/google-forms_tableau_edit-url-action.png" alt="Edit URL action to add a menu action using a given URL." class="r-stretch"><aside class="notes">
-<p>I made the give feedback sheet its own sheet.</p>
-<p>The insert menu is used to enter the user information fields, which you should put on detail on each sheet in which you want to use them.</p>
+<p>The Name is the literally what your users will see if you use the Menu option for the actions, so make it descriptive. The insert menu is used to enter the user information fields, which you should put on detail on each sheet in which you want to use them.</p>
+<p>The Data Values menu gives you the option to URL-encode variables, which is a good idea. There’s even an option to pass multiple values if the system you are targetting supports that.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -688,7 +740,19 @@ var qrcode = new QRCode("qrft", {"height":128,"colorLight":"#ffffff","colorDark"
 <section>
 <section id="case-study-data-quality-via-qualtrics" class="title-slide slide level1 center">
 <h1>case study: 🌡️ Data quality via Qualtrics</h1>
-
+<aside class="notes">
+<p>Feedback on dashboards is nice, but what if you want users to be able to report instances of bad data so that you can route it to someone who can fix them?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="results-1" class="slide level2">
 <h2>🌡️ results</h2>
@@ -697,7 +761,7 @@ var qrcode = new QRCode("qrft", {"height":128,"colorLight":"#ffffff","colorDark"
 <div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
 <p><a href="https://public.tableau.com/app/profile/brian.vancil/viz/data-quality-test/Dashboard">test dashboard</a> </p><div id="qrdq" class="qrcode"></div>
 <script type="text/javascript">
-var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark":"#000000","width":128,"text":"https://public.tableau.com/app/profile/brian.vancil/viz/data-quality-test/Dashboard"});
+var qrcode = new QRCode("qrdq", {"colorLight":"#ffffff","height":128,"text":"https://public.tableau.com/app/profile/brian.vancil/viz/data-quality-test/Dashboard","width":128,"colorDark":"#000000"});
 </script>
     <p></p>
 </div>
@@ -707,7 +771,7 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 </div>
 </div>
 <aside class="notes">
-<p>We have created a very simple dashboard with a few weird values.</p>
+<p>We have created a very simple dashboard with a few weird values. I encourage you to give it a try to comment on any data points you see as unfit. In the picture I have used Tableau to highlight these highly negative values for comment.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -724,7 +788,7 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 <h2>🌡️ functionality</h2>
 
 <img data-src="images/qualtrics_prefilled.png" alt="Pre-filled form" class="r-stretch"><aside class="notes">
-<p>Note that I have only pre-filled the ID so that I’m not passing around too much FERPA-covered information.</p>
+<p>Again, the form pre-fills. Because this is Qualtrics, you have more options about where to route the email, perhaps based on the data domain. Note that I have only pre-filled the ID so that I’m not passing around too much FERPA-covered information.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -759,7 +823,7 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 <h2>🌡️ survey flow</h2>
 
 <img data-src="images/qualtrics_survey-flow.png" alt="Survey flow that sets id, user, and name from the URL" class="r-stretch quarto-figure-center"><p class="caption">Set Embedded Data variables from the URL</p><aside class="notes">
-<p>You may create your own variable names in Qualtrics, which can be different from the name of the survey element.</p>
+<p>Here’s the survey flow as completed with <code>id</code>, <code>user</code>, and <code>name</code>. You may create your own variable names in Qualtrics, which can be different from the IDs of the survey elements.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -776,7 +840,7 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 <h2>🌡️ use embedded data variables</h2>
 
 <img data-src="images/qualtrics_survey-field.png" alt="Set an individual field" class="r-stretch quarto-figure-center"><p class="caption">Use Embedded Data variable in default value with the syntax <code>${e://Field/</code><em>fieldname</em><code>}</code></p><aside class="notes">
-<p>After the survey flow has run, Qualtrics makes those variables available within the survey.</p>
+<p>After the survey flow has run, Qualtrics makes those variables available as embedded data fields within the survey, but you can also use them explicitly in giving default values to your form fields.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -794,6 +858,7 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 <p>After this, the work in Tableau is nearly identical to the Google Forms case.</p>
 
 <img data-src="images/qualtrics_tableau-feedback-dot.png" alt="Clicking on feedback dot brings up link." class="r-stretch quarto-figure-center"><p class="caption">Feedback dot approach</p><aside class="notes">
+<p>After this, the work in Tableau is nearly identical to the Google Forms case.</p>
 <p>I used an explicit feedback dot to call attention to this functionality, but users would need to be told that they needed to click anyway, so I’m not at all set on this approach. An i-button may be a better approach.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -813,7 +878,7 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 <aside class="notes">
 <p>Users often want to drill down into data. Tableau can do some of this, but at some point, users often want the source systems, especially when they want to modify errant data.</p>
 <p>In our work, we are rarely have access to source systems, let alone design them. However, the types of URLs that these source applications support matter greatly to the user experience we are able to give users. We would like to be able to deep link (link to a specific detail page) as opposed to a shallow link to a home page.</p>
-<p>I see a large need for you to be more involved in asking the hard questions when these systems are purchased.</p>
+<p>I encourage you to be more involved in asking the hard questions when these systems are purchased.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -830,16 +895,35 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 <h2>🔍 warning!</h2>
 <p>🚧🏗👷‍♀️👷‍♂️🏗🚧 This section is a work-in-progress.</p>
 </section>
+<section id="creating-slate-urls" class="slide level2">
+<h2>🔍 creating Slate URLs</h2>
+<p>Slate report IDs look like:</p>
+<p><code>/manage/report/render?id=</code><em>reportUUID</em><code>&amp;</code><em>parameter1Id</em><code>=</code><em>parameter1Value</em><code>&amp;</code>…</p>
+<p>A <a href="https://www.uuidgenerator.net/version4">UUID/GUID</a> is what Slate uses internally to refer to certain data elements as well as queries and reports.</p>
+<aside class="notes">
+<p>Slate report IDs look like the following, where I have left off the protocol and server name because the server name will depend on your Slate instance. As with previous URLs, we can add key-equals-value pairs to pass information to Slate.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="add-parameter-to-report" class="slide level2">
 <h2>🔍 add parameter to report</h2>
 <p>Click “Edit Report” and then “Edit” to bring up the “Edit Report” dialog so that you can enter the parameters in the “Parameters” box. To define a parameter called <code>StudentID</code>, I used the XML markup <code>&lt;param id="StudentID" /&gt;</code>.</p>
-<p>dialog<img data-src="images/slate_edit-report_param.png"></p>
-</section>
+
+<img data-src="images/slate_edit-report_param.png" alt="Edit Report dialog box" class="r-stretch"></section>
 <section id="add-a-report-part" class="slide level2">
 <h2>🔍 add a report part</h2>
 <p>Add a “Data/Charts” or “Data Explorer” part. The “Query” part didn’t work for me.</p>
-<p>dialog<img data-src="images/slate_edit-data-table.png"></p>
-<aside class="notes">
+
+<img data-src="images/slate_edit-data-table.png" alt="Edit Part dialog box with Data Table as Type" class="r-stretch"><aside class="notes">
 <p>I suspect that the Query report part may be necessary to get the Slate functionality to link to a student or application detail page.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -856,9 +940,9 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 <section id="use-parameter-in-a-filter" class="slide level2">
 <h2>🔍 use parameter in a filter</h2>
 <p>Use the syntax <code>@</code><em>variablename</em> to in a filter to access the parameter.</p>
-<p>dialog<img data-src="images/slate_edit-data-table_adding-filter.png"> dialog<img data-src="images/slate_edit-data-table_filled-out.png"></p>
-<aside class="notes">
-<p>a</p>
+
+<img data-src="images/slate_edit-data-table_adding-filter.png" class="r-stretch"><aside class="notes">
+<p>You use the syntax at-sign and then the variable name to refer to a variable. You can use this in a filter to make the parameter affect the results.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -875,7 +959,7 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 <h2>🔍 all filled out</h2>
 
 <img data-src="images/slate_edit-data-table_filled-out.png" class="r-stretch"><aside class="notes">
-<p>You wouldn’t actually want to use GUID unless your reporting database exports that field, of course, and you have it available in Tableau.</p>
+<p>Here I’ve filltered the GUID to match my StudentID parameter. You wouldn’t actually want to use GUID unless your reporting database exports that field, of course, and you have it available in Tableau.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -888,15 +972,9 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
           display:block!important;
       }</style></aside>
 </section>
-<section id="creating-urls" class="slide level2">
-<h2>🔍 creating URLs</h2>
-<p>Slate report IDs look like:</p>
-<p><code>/manage/report/render?id=</code><em>reportUUID</em><code>&amp;</code><em>parameter1Id</em><code>=</code><em>parameter1Value</em><code>&amp;</code>…</p>
-<p>A <a href="https://www.uuidgenerator.net/version4">UUID/GUID</a> is what Slate uses internally to refer to certain data elements as well as queries and reports.</p>
-</section>
 <section id="it-works" class="slide level2">
 <h2>🔍 it works…</h2>
-<p>sometimes</p>
+<p>for Data Explorer and Data/Charts, but I couldn’t make it work for the Query report part.</p>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -911,7 +989,7 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 </div>
 </div>
 <aside class="notes">
-<p>It works for me in certain report parts but fails in queries.</p>
+<p>…I’m open to hearing from someone more familiar with Slate about how to solve this problem.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -953,9 +1031,16 @@ var qrcode = new QRCode("qrdq", {"height":128,"colorLight":"#ffffff","colorDark"
 </section>
 <section id="more-information" class="slide level2">
 <h2>more information</h2>
-<p><a href="https://public.tableau.com/app/profile/brian.vancil/viz/WorldIndicators-FeedbackTest/A">github.com/bvancil/tableau-url-actions</a> </p><div id="qrft" class="qrcode"></div>
+<h3 id="resources">resources</h3>
+<p><a href="https://github.com/bvancil/tableau-url-actions">github.com/bvancil/tableau-url-actions</a> </p><div id="qrgh" class="qrcode"></div>
 <script type="text/javascript">
-var qrcode = new QRCode("qrft", {"height":128,"colorLight":"#ffffff","colorDark":"#000000","width":128,"text":"https://public.tableau.com/app/profile/brian.vancil/viz/WorldIndicators-FeedbackTest/A"});
+var qrcode = new QRCode("qrgh", {"colorLight":"#ffffff","height":128,"text":"https://github.com/bvancil/tableau-url-actions","width":128,"colorDark":"#000000"});
+</script>
+     <br><p></p>
+<h3 id="presentation">presentation</h3>
+<p><a href="https://bvancil.github.io/tableau-url-actions/" class="uri">https://bvancil.github.io/tableau-url-actions/</a> </p><div id="qrpr" class="qrcode"></div>
+<script type="text/javascript">
+var qrcode = new QRCode("qrpr", {"colorLight":"#ffffff","height":128,"text":"https://bvancil.github.io/tableau-url-actions/","width":128,"colorDark":"#000000"});
 </script>
     <p></p>
 
