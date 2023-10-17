@@ -346,7 +346,7 @@ It works for Data Explorer and Data/Charts, but I couldn't make it work for the 
 ## caveats and tips
 
 -   Be sure that you are exporting FERPA-covered data elements to *encrypted* web services (i.e., those with `https://` URLs).
--   If you do not see the URL action, it may be that:
+-   If you do not see the URL action link in Tableau:
 
     -   Check that you included the variable pills on detail.
     -   Check that the URL scheme is valid. Start with a simple URL and grow it iteratively.
