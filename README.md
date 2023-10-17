@@ -84,3 +84,10 @@ Report Part
 - [Free Online GUID Generator](https://guidgenerator.com/)
 - Slate Knowledge Base. "[Parameters in reports](https://knowledge.technolutions.com/hc/en-us/articles/360033359491-Parameters-in-Reports#using-parameters-in-reports-0-0)".
 - Slate Knowledge Base. "[Prepopulating or prefilling forms using query string parameters](https://knowledge.technolutions.com/hc/en-us/articles/360032795252-Prepopulating-or-Prefilling-Forms-Using-Query-String-Parameters)".
+
+## Maintaining
+
+``` bash
+quarto render presentation/2023-10-17_bvancil_hetug_tableau-url-actions.qmd
+quarto publish gh-pages presentation/2023-10-17_bvancil_hetug_tableau-url-actions.qmd --no-render
+```
