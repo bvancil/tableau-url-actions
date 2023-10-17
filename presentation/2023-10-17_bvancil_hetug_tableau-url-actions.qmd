@@ -360,7 +360,6 @@ GET-style URLs are a surprisingly powerful way to pass information from one syst
 
 ### resources
 [github.com/bvancil/tableau-url-actions](https://github.com/bvancil/tableau-url-actions) {{< qrcode https://github.com/bvancil/tableau-url-actions qrgh >}}
-<br/>
 
 ### presentation
 <https://bvancil.github.io/tableau-url-actions/> (Use the `s` key to show all the speaker notes.) {{< qrcode https://bvancil.github.io/tableau-url-actions/ qrpr >}}
