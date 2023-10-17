@@ -89,5 +89,5 @@ Report Part
 
 ``` bash
 quarto render presentation/2023-10-17_bvancil_hetug_tableau-url-actions.qmd
-quarto publish gh-pages presentation/2023-10-17_bvancil_hetug_tableau-url-actions.qmd --no-render
+quarto publish gh-pages presentation/2023-10-17_bvancil_hetug_tableau-url-actions.qmd --no-render --no-prompt
 ```
